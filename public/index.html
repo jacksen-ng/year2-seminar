@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js + GPT Interactive</title>
+    <!-- 移除重复的THREE.js导入 -->
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <h1>Interactive 3D Generator</h1>
+            <div class="chat-box">
+                <div id="response" class="response-area">
+                    Type a command to generate 3D objects...<br>
+                    Try: "create a cube" or "show me a sphere"
+                </div>
+                <form id="gpt-form" class="input-form">
+                    <input type="text" id="prompt" placeholder="Type your command here..." required>
+                    <div class="button-group">
+                        <button type="submit">
+                            <span>Generate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                        <button type="button" id="clear-scene" class="clear-button">
+                            <span>Clear Scene</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 6h18"></path>
+                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="WebGL-output"></div>
+    </div>
+    <script type="module" src="js/gpt_auto.js"></script>
+</body>
+</html>
